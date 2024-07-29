@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+cd /root
+rm -rf *
+wget https://raw.githubusercontent.com/kancah/botak/main/untuktrial/bahan.zip >/dev/null 2>&1
+unzip bahan.zip
+rm /usr/bin/kills
+chmod +x sh/*
+mv sh/* /usr/bin
+rm /etc/simpelalf/modules/start.py
+mv /root/start.py /etc/simpelalf/modules
+systemctl restart simpelalfbot
+rm -rf *
